@@ -1,0 +1,24 @@
+
+server:
+  port: 8091
+spring:
+  datasource:
+    comm:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://10.19.14.83:8454/stt_comm?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+      username: settle
+      password: settle_123
+      commMapperLocations: classpath:com/asiainfo/comm/**/mapper/*.xml
+      configLocation: classpath:mybatis/mybatis-config.xml
+    settle:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      url: jdbc:oracle:thin:@192.168.74.120:1521:sett
+      username: settle
+      password: settle
+      settleMapperLocations: classpath:com/asiainfo/settle/**/mapper/*.xml
+      configLocation: classpath:mybatis/mybatis-config.xml
+
+logging:
+  level:
+    root: info
+    com.asiainfo: debug
